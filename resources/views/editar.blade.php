@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-    <nav class="w-full h-16 shadow bg-gray-900 text-white flex justify-around items-center">
+    <nav class="w-full h-16 shadow bg-blue-600 text-white flex justify-around items-center">
         <p class="text-xl font-semibold">Hola, {{ auth()->user()->name }}</p>
         <a class="text-xl font-semibold hover:scale-105 transition-all" href="">Cerrar Sesión</a>
     </nav>
     <div class="w-1/2 p-10">
-        <a href="{{ route('home.index')}}" class="underline mb-4">Volver</a>
+
         <form action="{{ route('editar.edit', $empleado->id)}}" class="flex flex-col gap-4" method="post">
             @csrf
             <div class="flex flex-col gap-2">
@@ -42,6 +42,7 @@
                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
             @enderror
             <button type="submit" class="w-full p-2 bg-yellow-500 text-white rounded hover:scale-105 transition-all">Editar</button>
+            <a href="{{ route('home.index')}}" class="underline mb-4">Volver</a>
         </form>
     </div>
 @endsection
