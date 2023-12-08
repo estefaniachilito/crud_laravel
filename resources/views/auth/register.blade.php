@@ -30,15 +30,17 @@
                     @enderror
                     <div class="flex flex-col gap-2">
                         <label for="password">Contraseña</label>
-                        <input type="password" value="{{ old('password')}}" class="p-2 border border-sky-300 rounded @error('password') border-red-500 @enderror">
+                        <input type="password" name="password" value="{{ old('password')}}" class="p-2 border border-sky-300 rounded @error('password') border-red-500 @enderror">
                     </div>
                     @error('password')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
-                    <button type="submit" class="p-2 rounded text-white border bg-sky-500 hover:scale-105 transition-all ">Registrarse</button>
+                    <button type="submit" class="p-2 rounded text-white bg-sky-500 hover:scale-105 transition-all ">Registrarse</button>
+                  
                 </form>
                 <a href="{{ route('login') }}" class="w-full p-2 text-white text-center bg-sky-500 rounded hover:scale-105 transition-all">Iniciar sesión</a>
             </div>
         </div>
     </div>
 @endsection
+
